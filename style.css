@@ -453,6 +453,19 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .custom.tparrows:hover { background-color: #ec8f0c; }
 .custom.tparrows:hover:before { color: #fff; }
 
+/* New Patner Carousel---------------------------------------*/
+.partner-flex-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* spacing between logos */
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 0;
+}
+.partner-flex-wrapper .themesflat-partner {
+    max-width: 150px; /* optional: control logo size */
+}
+
 /* Top Bar
 -------------------------------------------------------------- */
 #top-bar { position: relative; z-index: 1; }
