@@ -27,6 +27,8 @@
         <script src="javascript/html5shiv.js"></script>
         <script src="javascript/respond.min.js"></script>
     <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 </head>
 
@@ -36,7 +38,8 @@
     <div id="page" class="clearfix">
         <!-- Header Wrap -->
         <div id="site-header-wrap">
-            <!-- Top Bar -->        
+            <!-- Top Bar -->   
+
             <div id="top-bar">
                 <div id="top-bar-inner" class="container">
                     <div class="top-bar-inner-wrap">
@@ -127,7 +130,7 @@
                                     </ul> -->
                                 <!-- </li> -->
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="page-contact.html">CONTACT</a>
+                                    <a href="page-contact.html">AGENT PORTAL</a>
                                     <!-- <ul class="sub-menu right-sub-menu">
                                         <li class="menu-item"><a href="page-contact.html">CONTACT 1</a></li>
                                         <li class="menu-item"><a href="page-contact-2.html">CONTACT 2</a></li>
@@ -794,6 +797,7 @@
                                                     <div class="themesflat-contact-form style-1 clearfix">
                                                         <div class="themesflat-spacer clearfix" data-desktop="8" data-mobile="8" data-smobile="8"></div>
 
+
                                                         <form action="#" method="post" class="contact-form wpcf7-form">
                                                             <span class="wpcf7-form-control-wrap your-name">
                                                                 <input type="text" tabindex="1" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Name" required>
@@ -804,26 +808,26 @@
                                                             <span class="wpcf7-form-control-wrap your-email">
                                                                 <input type="email" tabindex="3" id="email" name="email" value="" class="wpcf7-form-control" placeholder="Email" required>
                                                             </span>
-                                                            <span class="wpcf7-form-control-wrap sales-exp">
+                                                            
                                                                 <select tabindex="4" id="sales-exp" name="sales-exp"  class="wpcf7-form-control" required>
                                                                     <option value="" >Do you have any sales experience?</option>
                                                                     <option value="yes">Yes</option>
                                                                     <option value="no">No</option>
                                                                 </select>
-                                                            </span>
-                                                            <br>
-                                                            <span class="wpcf7-form-control-wrap solar-exp">
+                                                           <p> </p>
                                                                <select tabindex="5" id="solar-exp" name="solar-exp"  class="wpcf7-form-control" required>
                                                                     <option value="">Do you have any experience with Solar Technology</option>
                                                                     <option value="yes">Yes</option>
                                                                     <option value="no">No</option>
                                                                 </select>
-                                                            </span>
-                                                            <br>                                                     
+                                                            <p> </p>                                                     
                                                             <span class="wrap-submit">
                                                                 <input type="submit" value="REGISTER" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
                                                             </span> 
+                                                            
+                                                            <div class="g-recaptcha" data-sitekey=""></div>
                                                         </form>
+
 
                                                     </div>
                                                 </div><!-- /.inner -->
