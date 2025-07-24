@@ -29,12 +29,72 @@
         <script src="javascript/respond.min.js"></script>
     <![endif]-->
 
+<style>
+
+/* Modal */
+.modal-open .modal {
+  z-index: 9999;
+}
+
+.modal-open .modal .modal-content {
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.modal-open .modal .modal-header,
+.modal-open .modal .modal-footer {
+  border-color: #4d381e;
+}
+
+.modal-open .modal .close {
+  color: #8a8d93;
+  opacity: 1;
+}
+
+.modal-open .modal .modal-title {
+  font-size: 1.5rem;
+}
+
+/* Block */
+.block {
+  padding: 20px;
+  background: #ffffff;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.block .title {
+  margin-bottom: 20px;
+}
+
+.block .title strong:first-child {
+  font-size: 1.5rem;
+  color: #a5a7ab;
+}
+
+.block .title span:first-child {
+  font-weight: 300;
+  font-size: 1rem;
+}
+.form-page .block {
+  margin-bottom: 30px;
+}
+
+</style>
+
+
+
+
 </head>
 
 <body class="header-fixed page no-sidebar header-style-2 topbar-style-1 menu-has-search">
 
 <div id="wrapper" class="animsition">
     <div id="page" class="clearfix">
+
+
+
+
+
         <!-- Header Wrap -->
         <div id="site-header-wrap">
             <!-- Top Bar -->        
@@ -184,18 +244,29 @@
         </div>
         <!-- End Featured Title -->
 
+
+
+
+
+
         <!-- Main Content -->
         <div id="main-content" class="site-main clearfix">
             <div id="content-wrap">
                 <div id="site-content" class="site-content clearfix">
                     <div id="inner-content" class="inner-content-wrap">
                        <div class="page-content">
+
+
+
                             <!-- PRICING-->
                             <div class="row-pricing">
                                 <div class="container">
                                     <div class="row">
+
                                         <div class="col-md-12">
                                             <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
+
+
                                             <div class="themesflat-headings style-1 text-center clearfix">
                                                 <h2 class="heading">PRICING</h2>
                                                 <div class="sep has-icon width-125 clearfix">
@@ -206,8 +277,12 @@
                                                     </div>
                                                 </div>                                              
                                             </div>
+
+
                                             <div class="themesflat-spacer clearfix" data-desktop="27" data-mobile="27" data-smobile="27"></div>
                                             <div class="row-price-table col4 clearfix">
+
+
                                                 <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
@@ -215,38 +290,35 @@
                                                                 <h5 class="title">Smart Small Business Package</h5> 
                                                             </div>
                                                             <div class="sep has-width w80 accent-bg clearfix"></div>
-                                                             <!-- <h3 class="mb-0">Smart Small Business</h3> -->
+                                                             
                                                             <div class="mt-0 price-table-price clearfix">
                                                                 <div class="price-wrap">
                                                                      <span class="figure strike"><span class="ml-0 currency">₦</span>500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>300,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
+
                                                             <div class="price-table-features clearfix">
                                                                 <ul class="list-content">
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                    <li><i class="autora-icon-long-arrow-right"></i><span>Small Fan</span></li>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Laptops, Phones</span></li>
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>POS Machine</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Charge Phones</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>24/7 support</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
+
+
+
                                                 <div class="themesflat-price-table style-1 active clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
                                                             <div class="price-table-name">
-                                                                <!-- <h5 class="title">PACKAGE 02</h5> -->
                                                                 <a href="#" class="tag">Popular</a>
                                                             </div>
                                                             <div class="sep has-width w80 accent-bg clearfix"></div>
@@ -255,10 +327,6 @@
                                                               <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>300,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
@@ -267,16 +335,18 @@
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Small TV & Fan</span></li>
                                                                     <!-- <li><i class="autora-icon-long-arrow-right"></i><span>Small Fan</span></li> -->
                                                                     <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>5 Lights</span></li>
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Top Expert</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>24/7 support</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
+
+
+
+
                                                 <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
@@ -289,27 +359,26 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>1,100,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>900,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
                                                                <ul class="list-content">
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>1 Bedroom Apartment</span></li>
-                                                                    <!-- <li><i class="autora-icon-long-arrow-right"></i><span>Laptops</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>POS Machine</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Charge Phones</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
+
+
+
+
+
+
                                                 <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
@@ -322,44 +391,31 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>2,500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>2,100,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
                                                                <ul class="list-content">
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>1 Bungalow with Freezer</span></li>
-                                                                    <!-- <li><i class="autora-icon-long-arrow-right"></i><span>Logistics services</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Interior Design</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Top Expert</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>24/7 support</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
-                                            </div><!-- /.row-price-table -->                                                
+
+
+                                            </div><!-- /.row-price-table -->  
                                             <!-- <div class="themesflat-spacer clearfix" data-desktop="81" data-mobile="60" data-smobile="60"></div> -->
+
+
                                         </div><!-- /.col-md-12 -->
-                                         <div class="col-md-12">
-                                            <!-- <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div> -->
-                                            <!-- <div class="themesflat-headings style-1 text-center clearfix"> -->
-                                                <!-- <h2 class="heading">PRICING</h2> -->
-                                                <!-- <div class="sep has-icon width-125 clearfix"> -->
-                                                    <!-- <div class="sep-icon"> -->
-                                                        <!-- <span class="sep-icon-before sep-center sep-solid"></span> -->
-                                                        <!-- <span class="icon-wrap"><i class="autora-icon-build"></i></span> -->
-                                                        <!-- <span class="sep-icon-after sep-center sep-solid"></span> -->
-                                                    <!-- </div> -->
-                                                <!-- </div>                                               -->
-                                            <!-- </div> -->
-                                            <!-- <div class="themesflat-spacer clearfix" data-desktop="27" data-mobile="27" data-smobile="27"></div> -->
+
+
+
+                                        <div class="col-md-12">
                                             <div class="row-price-table col4 clearfix">
                                                
                                                         
@@ -377,10 +433,6 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>3,500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>3,000,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
@@ -388,16 +440,19 @@
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Heavy User Bungalow</span></li>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Freezer</span></li>
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>POS Machine</span></li> -->
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Charge Phones</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
+
+
+
+
+                                                
                                                 <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
@@ -410,27 +465,26 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>5,500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>5,000,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
                                                                <ul class="list-content">
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Duplex & Pumping Machine</span></li>
-                                                                    <!-- <li><i class="autora-icon-long-arrow-right"></i><span>Pumping Machine</span></li> -->
                                                                     <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Freezer</span></li>
-                                                                    <!-- <li class="linethroug"><i class="autora-icon-long-arrow-right"></i><span>Charge Phones</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
+
+
+
+
+
                                                 <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
@@ -443,10 +497,6 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>10,500,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>10,000,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
@@ -454,18 +504,20 @@
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Air Conditioners,Freezers</span></li>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Pumping Machine</span></li>
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Interior Design</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Top Expert</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>24/7 support</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
-                                                 <div class="themesflat-price-table style-1 clearfix">
+
+
+
+
+
+                                                <div class="themesflat-price-table style-1 clearfix">
                                                     <div class="price-item">
                                                         <div class="inner">
                                                             <div class="price-table-name">
@@ -477,10 +529,6 @@
                                                                <div class="price-wrap">
                                                                  <span class="figure strike"><span class="ml-0 currency">₦</span>30,000,000</span>
                                                                     <span class="figure"><span class="ml-0 currency">₦</span>25,000,000</span>
-                                                                    <!-- <span class="currency-month right-38"> -->
-                                                                        
-                                                                        <!-- <span class="month">MONTH</span> -->
-                                                                    <!-- </span> -->
                                                                 </div>
                                                             </div>
                                                             <div class="price-table-features clearfix">
@@ -488,30 +536,96 @@
                                                                     <p class="mb-0 fw-bold">willpower:</p>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Duplex & Many Air Conditioners</span></li>
                                                                     <li><i class="autora-icon-long-arrow-right"></i><span>Freezers & Water Pump</span></li>
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Interior Design</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>Top Expert</span></li> -->
-                                                                    <!-- <li class="linethrough"><i class="autora-icon-long-arrow-right"></i><span>24/7 support</span></li> -->
                                                                 </ul>
                                                                 <div class="price-table-button">
-                                                                    <a href="#" class="themesflat-button bg-accent">GET IT</a>
+                                                                    <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#myModal">GET IT</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div><!-- /.themesflat-price-table -->
-                                            </div><!-- /.row-price-table -->                                                
+
+
+
+                                            </div><!-- /.row-price-table -->     
+
                                             <div class="themesflat-spacer clearfix" data-desktop="81" data-mobile="60" data-smobile="60"></div>
                                         </div><!-- /.col-md-12 -->
+
+
                                     </div><!-- /.row -->
                                     
                                 </div><!-- /.container -->
                             </div>
                             <!-- END PRICING -->
+
+
+
+
                        </div><!-- /.page-content -->
                     </div><!-- /#inner-content -->
                 </div><!-- /#site-content -->
             </div><!-- /#content-wrap -->
         </div><!-- /#main-content -->
+
+
+
+
+
+
+
+
+                <!-- Modal-->
+                    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                        <div role="document" class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">Contact Form</strong>
+                            <button type="button" data-dismiss="modal" aria-label="Close" style="background-color: white; color: black;"><span aria-hidden="true"><b>×</b></span></button>
+                          </div>
+
+                            <div class="modal-body">
+                                <p>Tell us a little about yourself and we'll get in touch with you soon.</p>
+
+
+                                <form>
+                                <div class="form-group">       
+                                    <label>Full name</label>
+                                    <input type="text" placeholder="Full Name" class="form-control">
+                                </div>    
+
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Email Address" class="form-control">
+                                </div>
+
+                                <div class="form-group">       
+                                    <label>Phone number</label>
+                                    <input type="text" placeholder="Phone Number" class="form-control">
+                                </div>
+
+                                <div class="form-group">       
+                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                </div>
+                                </form>
+
+                            </div>
+
+
+                          <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                            <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                <!-- End of Modal Form -->
+
+
+
+
 
         <!-- Footer -->
          <footer id="footer" class="clearfix">
@@ -682,6 +796,12 @@
             </div><!-- /#footer-widgets -->
         </footer><!-- /#footer -->
 
+
+
+
+
+
+
         <!-- Bottom -->
         <div id="bottom" class="clearfix has-spacer">
             <div id="bottom-bar-inner" class="container">
@@ -723,7 +843,24 @@
     </div><!-- /#page -->
 </div><!-- /#wrapper -->
 
+
+
+
+
+
+
+
 <a id="scroll-top"></a>
+
+
+
+
+
+
+
+
+
+
 
 <!-- Javascript -->
 <script src="assets/js/jquery.min.js"></script>
