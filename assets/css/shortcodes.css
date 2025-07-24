@@ -769,7 +769,7 @@
 .themesflat-price-table.style-1 .tag { background-color: #ec8f0c; color: #363636; font-size: 12px; padding: 4px 16px; letter-spacing: 0.4px; margin: 12px 0px 6px 3px; font-weight: 500;  }
 .themesflat-price-table.style-1 .sep { margin-top: 29px; }
 .themesflat-price-table.style-1 .price-table-price { margin-top: 16px; }
-.themesflat-price-table.style-1 .price-table-price .figure { font-size: 60px; line-height: 60px; color: #ec8f0c; }
+.themesflat-price-table.style-1 .price-table-price .figure { font-size: 35px; line-height: 60px; color: #ec8f0c; }
 .themesflat-price-table.style-1 .price-table-price .currency-month { position: absolute; bottom: 2px; right: 26px; }
 .themesflat-price-table.style-1 .price-table-price .currency { color: #ec8f0c; }
 .themesflat-price-table.style-1 .price-table-price .currency-month > span { position: relative; padding: 0px 16px; font-size: 18px; line-height: 24px;}
@@ -930,3 +930,6 @@
 
 
 
+.strike{
+	 text-decoration: line-through !important;
+}
