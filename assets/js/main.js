@@ -52,8 +52,7 @@
             // Run on Window Load
             self.config.$window.on( 'load', function() {
 
-            } );
-        },
+            } );     },
 
         // PreLoader
         preLoader: function() {
