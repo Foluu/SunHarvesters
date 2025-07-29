@@ -1,34 +1,44 @@
 
+document.getElementById("contactform").addEventListener("submit", async function(event) {
 
-async function login(email, password) {
-   
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    event.preventDefault(); // prevent form from refreshing the page
 
-   try{
-    const response = await fetch("../api/auth/login", {
-        method: "POST",
-        credentials: "include", // for cookies
-        headers: {
-            "Content-Type": "application/json"     
-           },
-        body: JSON.stringify({ email, password })  
-      });
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    if (!response.ok) {
-        throw new Error("Login failed");   
-     }
-     } catch(error){
+    if (!email || !password) {
+        alert("Please enter both email and password.");
+        return;
+    }
 
-            alert("error" + error.message);    
+    try {
+        const response = await fetch("https://sun-company.onrender.com/auth/login", {
+            method: "POST",
+            credentials: "include", // Send cookies
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Login failed");
         }
-    console.log("Login successful");     
-   }
-    login("user@example.com", "securepassword");
+
+        const data = await response.json();
+        console.log("Login successful:", data);
+        alert("Login successful!");
+
+    //  redirect to dashboard or reload
+
+        window.location.href = "/Sun-Harvesters App/index.html";
+
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Login failed: " + error.message);
+    }
 
 
-document.getElementById("contactform").addEventListener("submit", function(event) {
-    
-    event.preventDefault();
 
 });
