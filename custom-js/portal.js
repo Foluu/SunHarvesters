@@ -1,6 +1,6 @@
 
-document.getElementById("contactform").addEventListener("submit", async function(event) {
 
+document.getElementById("contactform").addEventListener("submit", async function(event) {
     event.preventDefault(); // prevent form from refreshing the page
 
     const email = document.getElementById("email").value.trim();
@@ -14,7 +14,7 @@ document.getElementById("contactform").addEventListener("submit", async function
     try {
         const response = await fetch("https://sun-company.onrender.com/auth/login", {
             method: "POST",
-            credentials: "include", // Send cookies
+            credentials: "include", // Send and receive cookies
             headers: {
                 "Content-Type": "application/json"
             },
@@ -24,6 +24,7 @@ document.getElementById("contactform").addEventListener("submit", async function
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error(errorData.message || "Login failed");
+
         }
 
         const data = await response.json();
@@ -31,16 +32,24 @@ document.getElementById("contactform").addEventListener("submit", async function
         alert("Login successful!");
 
 
-      
+        // Save user details locally
+        localStorage.setItem("user", JSON.stringify({ email }));
+
+        // Let the cookies settle
+        console.log("Waiting for cookies to be set before redirecting...");
+
+        setTimeout(() => {
+            console.log("Redirecting now...");
+
+            window.location.href = "/Sun-Harvesters App/index.html";
+
+        }, 500); 
+
 
     } catch (error) {
         console.error("Login error:", error);
         alert("Login failed: " + error.message);
     }
 
-
- //  redirect to dashboard
-
-    window.location.href = "/Sun-Harvesters App/index.html";
-    localStorage.setItem("user", JSON.stringify({ email, password }));
+    
 });
