@@ -30,9 +30,8 @@ document.getElementById("contactform").addEventListener("submit", async function
         console.log("Login successful:", data);
         alert("Login successful!");
 
-    //  redirect to dashboard or reload
 
-        window.location.href = "/Sun-Harvesters App/index.html";
+      
 
     } catch (error) {
         console.error("Login error:", error);
@@ -40,5 +39,8 @@ document.getElementById("contactform").addEventListener("submit", async function
     }
 
 
+ //  redirect to dashboard
 
+    window.location.href = "/Sun-Harvesters App/index.html";
+    localStorage.setItem("user", JSON.stringify({ email, password }));
 });

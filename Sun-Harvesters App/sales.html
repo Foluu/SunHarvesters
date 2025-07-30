@@ -296,39 +296,61 @@
     document.addEventListener('DOMContentLoaded', function() {
         
 
-//  Fetch Accounts from backend API and populate the select dropdown
+  //================ Fetch accounts from backend API and populate the select dropdown
 
-        try {
-                fetch('http:https://sun-company.onrender.com/agents/my-agents', {
+            async function populateAgentDropdown() {
+              console.log(" Starting agent dropdown population...");
 
-                method: 'GET',
-                headers: {
+              try {
+                console.log("Sending GET request to fetch agents...");
+                const response = await fetch('https://sun-company.onrender.com/agents/my-agents', {
+                  method: 'GET',
+                  headers: {
                     'Content-Type': 'application/json'
-                },
-                credentials: 'include' 
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                const accountSelect = document.querySelector('select[name="account"]');
-                data.forEach(agent => {
-                    const option = document.createElement('option');
-                    option.value = agent.name; // Assuming agent object has a 'name' property
-                    option.textContent = agent.name; // Display the agent's name
-                    accountSelect.appendChild(option);
+                  },
+                  credentials: 'include'
                 });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
+
+                console.log(" Response received:", response);
+
+                if (!response.ok) {
+                  console.error(" Server responded with error status:", response.status);
+                  throw new Error('Failed to fetch agents');
+                }
+
+                const data = await response.json();
+                console.log("Parsed response JSON:", data);
+
+                const accountSelect = document.querySelector('select[name="account"]');
+
+                if (!accountSelect) {
+                  console.error(" Could not find the select element with name='account'");
+                  return;
+                }
+
+                accountSelect.innerHTML = ''; 
+
+                data.forEach(agent => {
+                  console.log(" Processing agent:", agent);
+
+                  const option = document.createElement('option');
+                  option.value = agent.id; 
+                  option.textContent = agent.name; 
+
+                  accountSelect.appendChild(option);
+                  console.log(` Added <option> for agent: [id: ${agent.id}, name: ${agent.name}]`);
+                });
+
+                console.log(" Dropdown population complete!");
+
+              } catch (error) {
+                console.error('Error fetching or processing agents:', error);
                 alert('Failed to load agents. Please try again later.');
-            });
-        } catch (error) {
-            console.error('Error in fetch operation:', error);
-            alert('An error occurred while loading agents. Please try again later.');
-        }
-    });
+              }
+            }
+
+            // Call it when the page loads or when needed
+            populateAgentDropdown();
 
 
         // Form submit handler
@@ -448,6 +470,7 @@
 
     }
 }
+    });
 
 
     </script>
