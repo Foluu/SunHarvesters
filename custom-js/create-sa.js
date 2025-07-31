@@ -1,57 +1,63 @@
 
 
 //=================== Create Sales Admin Function ==========================
-async function createSalesAdmin() {
 
-  // Get relevant form values
-  const Name = document.querySelector('input[name="fullName"]').value;
-  const emailAddress = document.querySelector('input[name="registerEmail"]').value;
+    document.addEventListener('DOMContentLoaded', () => {
 
-  // Validate inputs
-  if (!Name || !emailAddress) {
-    alert("Please fill in all required fields.");
-    return;
-  }
-
-  try {
-    // Create the data object to be sent
-    const salesAdminData = {
-      fullName: Name,
-      // email: emailAddress
-    };
-
-    const response = await fetch('https://sun-company.onrender.com/agents/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(salesAdminData)
+    const form = document.querySelector('form.form-horizontal');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        createSalesAdmin();
     });
 
-    
-      console.log("Sales Admin data to be sent:", salesAdminData);
+    });
 
-    if (!response.ok) {
-      throw new Error('Failed to create Sales Admin. Please try again.');
+    async function createSalesAdmin() {
+    const name = document.querySelector('input[name="fullName"]').value;
+    const emailAddress = document.querySelector('input[name="registerEmail"]').value;
+
+    console.log("Name:", name, "Email:", emailAddress);
+
+    if (!name || !emailAddress) {
+        alert("Please fill in all required fields.");
+        return;
     }
 
-    const data = await response.json();
-    console.log("Sales Admin created successfully:", data);
-    alert("Sales Admin created successfully!");
+    try {
+        const salesAdminData = {
+        name: name,
+        // email: emailAddress
+        };
 
-    // Reset form
-    document.querySelector('form.form-horizontal').reset();
+        console.log("Sales Admin data to be sent:", salesAdminData);
 
-  } catch (error) {
-    console.error("Error creating Sales Admin:", error);
-    alert("Error creating Sales Admin: " + error.message);
-  }
-}
+        const response = await fetch('https://sun-company.onrender.com/agents/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify(salesAdminData)
+        });
 
-        
+        if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(errText || 'Failed to create Sales Admin. Please try again.');
+        }
 
-      // const form = document.querySelector('form.form-horizontal');
-      // form.addEventListener('submit', function(event) {
-      //   event.preventDefault(); 
-      //   createSalesAdmin();
-      // });
+        const data = await response.json();
+
+        console.log("Sales Admin created successfully:", data);
+
+        alert("Sales Admin created successfully!");
+
+        document.querySelector('form.form-horizontal').reset();
+
+    } catch (error) {
+        console.error("Error creating Sales Admin:", error);
+
+        alert("Error creating Sales Admin: " + error.message);
+    }
+
+    }
+

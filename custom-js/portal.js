@@ -34,6 +34,7 @@ document.getElementById("contactform").addEventListener("submit", async function
 
         // Save user details locally
         localStorage.setItem("user", JSON.stringify({ email }));
+        localStorage.setItem("name", data.name);
 
         // Let the cookies settle
         console.log("Waiting for cookies to be set before redirecting...");
