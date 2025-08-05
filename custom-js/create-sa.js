@@ -38,6 +38,7 @@
         },
         credentials: 'include',
         body: JSON.stringify(salesAdminData)
+        
         });
 
         if (!response.ok) {
