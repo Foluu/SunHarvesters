@@ -139,37 +139,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //--------------------- Sales Posting Handler -------------------------------//
 
- async function postSales() {
+async function postSales() {
   const rows = document.querySelectorAll('#salesTableBody tr');
   if (rows.length === 0) return alert('No sales records to post.');
 
   const items = [];
-  let agentId = null;
   let descriptionParts = [];
 
+
+
   rows.forEach(row => {
-  const productName = row.querySelector('td:nth-child(4)').textContent.trim();
-  const quantity = parseInt(row.querySelector('td:nth-child(5)').textContent.trim(), 10);
-  const pricePerUnit = parseFloat(row.querySelector('td:nth-child(6)').textContent.trim());
+    const productName = row.querySelector('td:nth-child(4)').textContent.trim();
+    const quantity = parseInt(row.querySelector('td:nth-child(5)').textContent.trim(), 10);
+    const pricePerUnit = parseFloat(row.querySelector('td:nth-child(6)').textContent.replace('₦', '').trim());
 
-  const agentFromRow = row.getAttribute('data-agent-id'); // 👈 Now pulling the actual ID
 
-  if (!agentId) agentId = agentFromRow;
 
-  if (agentId !== agentFromRow) {
-    alert('All rows must use the same agent for this sale.');
-    throw new Error('Inconsistent agent IDs in rows.');
-  }
+    descriptionParts.push(`${productName} x${quantity}`);
+    items.push({ productName, quantity, pricePerUnit });
+  });
 
-  descriptionParts.push(`${productName} x${quantity}`);
-  items.push({ productName, quantity, pricePerUnit });
-});
+
 
   const payload = {
     description: descriptionParts.join(', '),
-    agentId: Number(agentId), // Make sure it's a number if your backend expects it
     items
   };
+
+
+  // Optional: check if agent is selected from a dropdown
+
+  const agentDropdown = document.getElementById('agentSelect'); 
+
+
+  if (agentDropdown && agentDropdown.value) {
+
+    payload.agentId = Number(agentDropdown.value); // Add it only if selected
+  }
+
+
 
   console.log('Sales Payload:', payload);
 
