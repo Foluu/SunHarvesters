@@ -170,26 +170,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- Forms Section-->
         <section class="no-padding-top">
           <div class="container-fluid">
             <div class="row">
+
+
+
+
+
+
+
 
 
 
@@ -322,22 +313,88 @@
 
 
 
-              <!-- Form Elements -->
+              <!-- Register Member Handler -->
+                <div class="col-lg-12">
+                    <div class="block">
+                      <div class="title"><strong class="d-block">Register a Member</strong>
+                        <span class="d-block">Register a new Admin personel or a Sales Administrator</span>
+                      </div>
+                      <div class="block-body">
+                        <form id="registerMemberForm">
+
+                          <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Full Name</label>
+                            <div class="col-sm-9">
+                              <input name="fullName" type="text" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Email Address</label>
+                            <div class="col-sm-9">
+                              <input name="registerEmail" type="email" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Phone Number</label>
+                            <div class="col-sm-9">
+                              <input name="phone" type="text" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">       
+                            <label class="col-sm-3 form-control-label">Create Password</label>
+                            <div class="col-sm-9">
+                              <input name="password" type="password" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">       
+                            <label class="col-sm-3 form-control-label">Repeat Password</label>
+                            <div class="col-sm-9">
+                              <input name="confirmPassword" type="password" class="form-control">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Role</label>
+                            <div class="col-sm-9">
+                              <select name="role" class="form-control mb-3 mb-3">
+                                <option></option>
+                                <option>ADMIN</option>
+                                <option>SALES_REP</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group row"> 
+                            <div class="col-sm-3"></div>    
+                            <input type="submit" value="Register" class="btn btn-primary">
+                          </div>
+
+                        </form>
+
+                      </div>
+                    </div>
+                </div>
+
+            <!-- End of Register Member Handler Form -->
+
+
+
+
+              <!-- Sales AGENT Form Handler -->
               <div class="col-lg-12">
                 <div class="block">
-                  <div class="title"><strong>Create a Sales Admin</strong></div>
-
-
+                  <div class="title"><strong>Create a Sales Agent</strong></div>
                   <div class="block-body">
                     <form class="form-horizontal">
-
-
-
 
                       <div class="form-group row">
                         <label class="col-sm-3 form-control-label">Full Name</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter Full Name" required>
+                          <input type="text" class="form-control" id="agentName" name="agentName" placeholder="Enter Full Name" required>
                         </div>
                       </div>
 
@@ -361,8 +418,8 @@
                         <div class="col-sm-9">
                         
                           <div class="form-group-material">
-                            <input id="register-email" type="email" name="registerEmail" required class="input-material">
-                            <label for="register-email" class="label-material">Email Address      </label>
+                            <input id="register-email" type="text" name="registerEmail" class="input-material">
+                            <label for="register-email" class="label-material">Email Address </label>
                           </div>
                           
                         </div>
@@ -445,7 +502,6 @@
 
 
                     </form>
-
                   </div>
                 </div>
               </div>
@@ -453,7 +509,26 @@
           </div>
         </section>
 
-        <!-- End of Forms Section-->
+        <!-- End of Sales AGENT Form Handler Section-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <footer class="footer">
