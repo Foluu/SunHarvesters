@@ -10,19 +10,19 @@
 
 
     try {
-      const res = await fetch('/api/top-sales-reps');
+      const res = await fetch('https://your-backend.onrender.com/reports/sales-ranking');
 
 
       const data = await res.json();
       const topThree = data.slice(0, 3);
       const rest = data.slice(3);
-
-
+      
+      console.log('Fetched leaderboard data:', data);
 
       // Render Top 3
 
       topThree.forEach(user => {
-        const dashbgClass = `dashbg-${user.rank}`; // e.g., dashbg-1
+        const dashbgClass = `dashbg-${user.rank}`; 
         const topBlock = `
           <div class="col-lg-4">
             <div class="user-block block text-center">

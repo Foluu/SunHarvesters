@@ -42,7 +42,7 @@ document.getElementById("contactform").addEventListener("submit", async function
         setTimeout(() => {
             console.log("Redirecting now...");
 
-            window.location.href = "/Sun-Harvesters App/index.html";
+            window.location.href = "/Sun-Harvesters App/index-1.html";
 
         }, 500); 
 
